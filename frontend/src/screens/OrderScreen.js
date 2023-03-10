@@ -204,14 +204,12 @@ const OrderScreen = ({ match, history }) => {
               {!order.isPaid && (
                 <ListGroup.Item>
                   {loadingPay && <Loader />}
-                  {/* {!sdkReady ? (
-                    <Loader />
-                  ) : (
+                  { !sdkReady ? <Loader /> : (
                     <PayPalButton
                       amount={order.totalPrice}
                       onSuccess={successPaymentHandler}
                     />
-                  )} */}
+                  )} 
                       {<Button type='button' onClick={() => successPaymentHandler(paymentResult)} variant="success" size="lg" active  className='btn-block'>
                         Pay Now
                       </Button>}
